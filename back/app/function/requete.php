@@ -1,8 +1,10 @@
 <?php
 require_once '../../config/database.php';
 require_once '../controllers/learnerControllers.php';
+require_once '../controllers/test.php';
 
 /**
+ * $apprenants = formatLearner();
  * Fonction pour compter le nombre total d'apprenants dans la base de données.
  * @param PDO $bdd L'objet de connexion à la base de données.
  * @return int Le nombre total d'apprenants.
@@ -67,14 +69,32 @@ function insertLearner($promotion, $name, $firstname, $gender, $age, $skills, $b
                 ':skills' => $skills
             ));
         } else{
-            header("Location: ../../index.php?reg_err=Learner");
+            header("Location: ../../../front/index.php?reg_err=Learner");
             exit(); 
         }
     } catch (PDOException $e) {
-        header("Location: ../../index.php");
+        header("Location: ../../../front/index.php");
         echo "Erreur PDO lors de la préparation de la requête : " . $e->getMessage();
         exit(); 
     }
+}
+
+function formatLearner(){
+    require_once '../../config/database.php';
+    $apprenantsResults = selectLearner($bdd);
+    $apprenants = [];
+    foreach ($apprenantsResults as $row) {
+        $formattedRow = [
+            'promotion' => $row['promotion'],
+            'nom' => $row['nom'],
+            'prenom' => $row['prenom'],
+            'sexe' => $row['sexe'],
+            'age' => intval($row['age']),
+            'competences' => explode(',', $row['competences'])
+        ];
+        $apprenants[] = $formattedRow;
+    }
+    return $apprenants;
 }
 
 /**

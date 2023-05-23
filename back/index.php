@@ -74,7 +74,7 @@ if(isset($_GET['reg_err']))
     <br>
 
     <h2>Formulaire d'envoi de fichier JSON</h2>
-    <form action="/app/controllers/learnerControllers.php" method="POST" enctype="multipart/form-data">
+    <form action="back/app/controllers/test.php" method="POST" enctype="multipart/form-data">
         <input type="file" name="jsonFile" accept=".json" required>
         <br><br>
         <input type="submit" value="Envoyer">

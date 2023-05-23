@@ -9,15 +9,19 @@ if ($_POST['promotion']){
         $promotion = $_POST['promotion'];
         $name = $_POST['name'];
         $firstname = $_POST['firstname'];
-        $gender = $_POST['gender'];
+        if($_POST['man']){
+            $gender = 'man';
+        }elseif($_POST['woman']){
+            $gender = 'woman';
+        }
         $age = $_POST['age'];
         $skills = $_POST['skills'];
         
         insertLearner($promotion, $name, $firstname, $gender, $age, $skills, $bdd);
-        header("Location: ../../index.php?reg_err=addLearner");
+        header("Location: ../../../front/index.php?reg_err=addLearner");
         exit(); 
     }else {
-        header("Location: ../../index.php?reg_err=session");
+        header("Location: ../../../front/index.php?reg_err=session");
     }
 } else{
     // Vérifier si le nombre d'apprenants est inférieur à 25
@@ -49,7 +53,7 @@ if ($_POST['promotion']){
                     // Vérifier si le nombre d'apprenants est inférieur à 25
                     insertLearner($promotion, $name, $firstname, $gender, $age, $skills, $bdd);
                 }
-                header("Location: ../../index.php?reg_err=addLearner");
+                header("Location: ../../../front/index.php?reg_err=addLearner");
                 exit(); 
             } else {
                 echo "Erreur lors de la lecture du fichier JSON.";

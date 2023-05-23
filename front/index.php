@@ -1,3 +1,41 @@
+<?php
+if(isset($_GET['reg_err']))
+{
+    $err = htmlspecialchars($_GET['reg_err']);
+
+    switch($err)
+    {
+        case 'success':
+            echo "Seccess";
+        break;
+
+        case 'down':
+            echo "Erreur BDD";
+            break;
+        
+        case 'Bug':
+            echo "Bug post";
+            break;
+        
+        case 'session':
+            echo "Session pleinne";
+            break;
+        
+        case 'addLearner':
+            echo "Apprenant ajouté avec succès.";
+            break;
+        
+        case '!addLearner':
+            echo "Erreur lors de l'ajout de l'apprenant.";
+            break;
+        
+        case 'Learner':
+            echo "cette apprenant est deja dans la session.";
+            break;   
+
+    }
+}
+?>
 
 <!doctype html>
 <html lang="en" class="h-100" data-bs-theme="auto">
@@ -48,7 +86,7 @@
       <div class="row">
         <div class="col-12 col-sm-5">
           <h2 class="mt-5 ">Formulaire de saisie des apprenants </h2>
-          <form class="col-10 col-xs-5" method="post" action="http://localhost:8080/back/app/controllers/learnerControllers.php">
+          <form class="col-10 col-xs-5" method="post" action="http://localhost/back/app/controllers/learnerControllers.php">
             <!--Nom-->
               <div class="mb-4 mt-4">
                 <div class="row g-3 align-items-center">
@@ -56,7 +94,7 @@
                       <label for="name" class="col-form-label">Nom : </label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name="name" id="name" class="form-control">
+                      <input type="text" name="name" id="name" class="form-control" required>
                     </div>
                   </div>
               </div>
@@ -67,7 +105,7 @@
                       <label for="firstName" class="col-form-label">Prénom : </label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name="firstname" id="firstname" class="form-control" >
+                      <input type="text" name="firstname" id="firstname" class="form-control" required>
                     </div>
                   </div>
               </div>
@@ -78,7 +116,7 @@
                       <label for="promotion" class="col-form-label">Promotion : </label>
                     </div>
                     <div class="col-auto">
-                      <input type="number" name="promotion" id="promotion" class="form-control">
+                      <input type="number" name="promotion" id="promotion" class="form-control" required>
                     </div>
                   </div>
               </div>
@@ -86,13 +124,13 @@
               <div class="mb-3">
                 <label for="gender" class="form-label">Sexe : </label>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="man">
+                  <input class="form-check-input" type="radio" name="man" id="man" required>
                   <label class="form-check-label" for="man">
                     Homme
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gender" id="woman">
+                  <input class="form-check-input" type="radio" name="woman" id="woman" required>
                   <label class="form-check-label" for="woman">
                     Femme
                   </label>
@@ -105,14 +143,14 @@
                       <label for="age" class="col-form-label">Âge : </label>
                     </div>
                     <div class="col-auto">
-                      <input type="number" name="age" id="age" class="form-control">
+                      <input type="number" name="age" id="age" class="form-control" required>
                     </div>
                   </div>
               </div>
               <!--Compétences-->
               <div class="mb-3">
                 <label for="skills" class="form-label">Compétences : </label>
-                <textarea class="form-control"  name="skills" id="skills" rows="2"></textarea>
+                <textarea class="form-control"  name="skills" id="skills" rows="2" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Envoyer</button>
           </form>
@@ -122,7 +160,7 @@
         </div>
         <div class="col">
           <h2 class="mt-5 ">Improtation des apprenants </h2>
-          <form class=" col-xs-5" action="http://localhost:8080/back/app/controllers/learnerControllers.php" method="post">
+          <form class=" col-xs-5" action="http://localhost/back/app/controllers/learnerControllers.ph" method="post">
             <label for="import" class="mt-3">Le fichier importé doit obiligatoirement être au format JSON.</label>
             <div class="mb-3 mt-3">
               <input class="form-control" type="jsonFile" id="import" accept=".json">
