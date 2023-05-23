@@ -2,8 +2,8 @@
 // Paramètres de connexion à la base de données
 $serveur = "localhost"; // Serveur de la base de données
 $utilisateur = "root"; // Nom d'utilisateur de la base de données
-$motDePasse = ""; // Mot de passe de la base de données
-$nomBaseDeDonnees = "bewved"; // Nom de la base de données
+$motDePasse = "root"; // Mot de passe de la base de données
+$nomBaseDeDonnees = "bewdev"; // Nom de la base de données
 
 try {
     // Connexion à la base de données
