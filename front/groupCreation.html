@@ -7,10 +7,14 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <label>
-      <input type="checkbox" id="ageCheckbox"> Âge
-    </label>
-    <button onclick="afficherApprenants()">Valider</button>
+    <h1>Constitution de groupes d'apprenants</h1>
+
+    <form id="groupForm">
+      <label for="groupSize">Taille des groupes :</label>
+      <input type="number" id="groupSize" required>
+
+      <button type="submit">Valider</button>
+    </form>
 
     <div id="resultats">
       <!-- Les groupes d'apprenants seront générés ici -->
