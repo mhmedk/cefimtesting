@@ -1,0 +1,34 @@
+[
+  {
+    "promotion": "2023",
+    "name": "Leparq",
+    "firstname": "Ryan",
+    "gender": "Masculin",
+    "age": 20,
+    "skills": "PHP"
+  },
+{
+    "promotion": "2023",
+    "name": "Kasbi",
+    "firstname": "Mohammed",
+    "gender": "Masculin",
+    "age": 22,
+    "skills": "JS"
+  },
+{
+    "promotion": "2023",
+    "name": "Dallay",
+    "firstname": "Cassandre",
+    "gender": "Femmin",
+    "age": 20,
+    "skills": "HTML"
+  },
+{
+    "promotion": "2023",
+    "name": "Adam",
+    "firstname": "Dorian",
+    "gender": "Masculin",
+    "age": 20,
+    "skills": "CSS"
+  }
+]
