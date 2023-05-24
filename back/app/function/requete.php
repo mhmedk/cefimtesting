@@ -1,7 +1,6 @@
 <?php
 require_once '../../config/database.php';
 require_once '../controllers/learnerControllers.php';
-require_once '../controllers/test.php';
 
 /**
  * $apprenants = formatLearner();
