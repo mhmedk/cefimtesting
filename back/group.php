@@ -1,6 +1,6 @@
 <?php
-// Autoriser les requêtes depuis n'importe quelle origine
-header('Access-Control-Allow-Origin: *');
+// // Autoriser les requêtes depuis n'importe quelle origine
+// header('Access-Control-Allow-Origin: *');
 
 $apprenants = [
     ['promotion' => '2021', 'nom' => 'Doe', 'prenom' => 'John', 'sexe' => 'M', 'age' => 25, 'competences' => ['JavaScript', 'HTML']],

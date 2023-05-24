@@ -12,7 +12,7 @@ function getApprenants(event) {
     const maxApprenantsPerGroup = document.getElementById('groupSize').value
 
     // Faire une requête fetch pour obtenir les apprenants
-    fetch('http://localhost:8080/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup)
+    fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup)
         .then((response) => {
             if (response.ok) {
                 return response.json()
