@@ -17,6 +17,7 @@ $apprenants = [
     ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
 ];
 
+
 // Fonction pour constituer les groupes
 function createGroups($apprenants, $groupSize) {
     // Mélanger les apprenants aléatoirement
