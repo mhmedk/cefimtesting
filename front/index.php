@@ -69,7 +69,7 @@ if(isset($_GET['reg_err']))
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Formulaire apprenant</a>
+              <a class="nav-link active" aria-current="page" href="index.php">Formulaire apprenant</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="groupCreation.html">Création groupe</a>
@@ -124,13 +124,13 @@ if(isset($_GET['reg_err']))
               <div class="mb-3">
                 <label for="gender" class="form-label">Sexe : </label>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="man" id="man" required>
+                  <input class="form-check-input" type="radio" name="man" id="man">
                   <label class="form-check-label" for="man">
                     Homme
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="woman" id="woman" required>
+                  <input class="form-check-input" type="radio" name="woman" id="woman">
                   <label class="form-check-label" for="woman">
                     Femme
                   </label>
@@ -163,7 +163,7 @@ if(isset($_GET['reg_err']))
           <form class=" col-xs-5" action="http://localhost/back/app/controllers/learnerControllers.ph" method="post">
             <label for="import" class="mt-3">Le fichier importé doit obiligatoirement être au format JSON.</label>
             <div class="mb-3 mt-3">
-              <input class="form-control" type="jsonFile" id="import" accept=".json">
+              <input class="form-control" type="file" name="jsonFile" id="import" accept=".json">
             </div>
               <button type="submit" class="btn btn-primary">Envoyer</button>
           </form>
