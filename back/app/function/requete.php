@@ -1,6 +1,6 @@
 <?php
-require_once '../../config/database.php';
-require_once '../controllers/learnerControllers.php';
+// require_once '../../config/database.php';
+// require_once '../controllers/learnerControllers.php';
 
 /**
  * $apprenants = formatLearner();
@@ -108,7 +108,7 @@ function selectLearner($bdd){
         // Exécuter la requête
         $select->execute();
         // Récupérer le nombre de personnes
-        $result = $select->fetch(PDO::FETCH_ASSOC);
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
        return $result;
     } catch (PDOException $e) {
         echo "Erreur PDO lors de la préparation de la requête : " . $e->getMessage();

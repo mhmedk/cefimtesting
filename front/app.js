@@ -41,7 +41,7 @@ function displayGroups(apprenantsFiltres) {
         apprenantGroup.forEach((apprenant) => {
 
             let item = document.createElement("li")
-            item.textContent = apprenant.prenom
+            item.textContent = apprenant.name + ' ' + apprenant.firstname
             ul.appendChild(item)
 
         })
