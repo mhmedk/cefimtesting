@@ -4,7 +4,7 @@ require_once '../../config/database.php';
 require_once '../function/requete.php';
 
 // Récupérer les données du formulaire
-if ($_POST['promotion']){
+if (isset($_POST['promotion'])){
     if(learnerCount($bdd) < 25){
         $promotion = $_POST['promotion'];
         $name = $_POST['name'];

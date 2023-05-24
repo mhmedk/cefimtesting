@@ -160,7 +160,7 @@ if(isset($_GET['reg_err']))
         </div>
         <div class="col">
           <h2 class="mt-5 ">Improtation des apprenants </h2>
-          <form class=" col-xs-5" action="../back/app/controllers/learnerControllers.php" method="post">
+          <form class=" col-xs-5" action="../back/app/controllers/learnerControllers.php" method="post" enctype="multipart/form-data">
             <label for="import" class="mt-3">Le fichier importé doit obiligatoirement être au format JSON.</label>
             <div class="mb-3 mt-3">
               <input class="form-control" type="file" name="jsonFile" id="import" accept=".json">
