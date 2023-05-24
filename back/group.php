@@ -1,22 +1,8 @@
 <?php
-// // Autoriser les requêtes depuis n'importe quelle origine
-// header('Access-Control-Allow-Origin: *');
+require_once './config/database.php';
+require_once './app/function/requete.php';
 
-$apprenants = [
-    ['promotion' => '2021', 'nom' => 'Doe', 'prenom' => 'John', 'sexe' => 'M', 'age' => 25, 'competences' => ['JavaScript', 'HTML']],
-    ['promotion' => '2020', 'nom' => 'Smith', 'prenom' => 'Alice', 'sexe' => 'F', 'age' => 30, 'competences' => ['Python', 'CSS']],
-    ['promotion' => '2022', 'nom' => 'Johnson', 'prenom' => 'Emma', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2021', 'nom' => 'Williams', 'prenom' => 'Michael', 'sexe' => 'M', 'age' => 25, 'competences' => ['JavaScript', 'HTML']],
-    ['promotion' => '2021', 'nom' => 'Williams', 'prenom' => 'Michael', 'sexe' => 'M', 'age' => 25, 'competences' => ['JavaScript', 'HTML']],
-    ['promotion' => '2020', 'nom' => 'Brown', 'prenom' => 'Olivia', 'sexe' => 'F', 'age' => 30, 'competences' => ['Python', 'CSS']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-    ['promotion' => '2022', 'nom' => 'Jones', 'prenom' => 'Sophia', 'sexe' => 'F', 'age' => 22, 'competences' => ['JavaScript', 'PHP']],
-];
-
+$apprenants = selectLearner($bdd);
 
 // Fonction pour constituer les groupes
 function createGroups($apprenants, $groupSize) {
