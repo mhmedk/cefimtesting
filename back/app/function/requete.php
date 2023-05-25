@@ -1,9 +1,6 @@
 <?php
-// require_once '../../config/database.php';
-// require_once '../controllers/learnerControllers.php';
-
 /**
- * $apprenants = formatLearner();
+ * $apprenants = learnerCount();
  * Fonction pour compter le nombre total d'apprenants dans la base de données.
  * @param PDO $bdd L'objet de connexion à la base de données.
  * @return int Le nombre total d'apprenants.
@@ -22,6 +19,7 @@ function learnerCount($bdd){
         echo "Erreur PDO lors de la préparation de la requête : " . $e->getMessage();
     }
 }
+
 
 /**
  * Fonction pour insérer les informations d'un nouvel apprenant dans la base de données.
@@ -78,23 +76,6 @@ function insertLearner($promotion, $name, $firstname, $gender, $age, $skills, $b
     }
 }
 
-function formatLearner(){
-    require_once '../../config/database.php';
-    $apprenantsResults = selectLearner($bdd);
-    $apprenants = [];
-    foreach ($apprenantsResults as $row) {
-        $formattedRow = [
-            'promotion' => $row['promotion'],
-            'nom' => $row['nom'],
-            'prenom' => $row['prenom'],
-            'sexe' => $row['sexe'],
-            'age' => intval($row['age']),
-            'competences' => explode(',', $row['competences'])
-        ];
-        $apprenants[] = $formattedRow;
-    }
-    return $apprenants;
-}
 
 /**
  * Fonction pour sélectionner tous les apprenants dans la base de données.
