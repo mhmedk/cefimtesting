@@ -198,13 +198,5 @@
     "gender": "man",
     "age": 31,
     "skills": "JAVA"
-  },
-  {
-    "promotion": "2023",
-    "name": "Turner (PHP)",
-    "firstname": "Lily FILLE",
-    "gender": "woman",
-    "age": 28,
-    "skills": "PHP"
   }
 ]
