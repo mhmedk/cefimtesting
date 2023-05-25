@@ -14,13 +14,17 @@ function getApprenants(event) {
 
     const skillsCheckbox = document.getElementById('skillsFilter');
     const skillsFilter = skillsCheckbox.checked;
+  
+    const ageCheckbox = document.getElementById('age');
+    const ageFilter = ageCheckbox.checked;
 
     const maxApprenantsPerGroup = document.getElementById('groupSize').value
 
     // Faire une requête fetch pour obtenir les apprenants
     fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup
         + '&genderfilter=' + genderFilter.toString()
-        + '&skillsFilter=' + skillsFilter.toString())
+        + '&skillsFilter=' + skillsFilter.toString()
+        + '&agefilter=' + ageFilter.toString())
             .then((response) => {
                 if (response.ok) {
                     return response.json()
