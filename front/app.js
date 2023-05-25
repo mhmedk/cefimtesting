@@ -12,23 +12,28 @@ function getApprenants(event) {
     const genderCheckbox = document.getElementById('gender');
     const genderFilter = genderCheckbox.checked;
 
+    const skillsCheckbox = document.getElementById('skillsFilter');
+    const skillsFilter = skillsCheckbox.checked;
+
     const maxApprenantsPerGroup = document.getElementById('groupSize').value
 
     // Faire une requête fetch pour obtenir les apprenants
-    fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup + '&genderfilter=' + genderFilter.toString())
-        .then((response) => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('Erreur lors de la récupération des apprenants : ' + response.status)
-            }
-        })
-        .then((groups) => {
-            displayGroups(groups)
-        })
-        .catch(function(error) {
-            console.error('Erreur lors de la récupération des apprenants : ' + error.message)
-        })
+    fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup
+        + '&genderfilter=' + genderFilter.toString()
+        + '&skillsFilter=' + skillsFilter.toString())
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Erreur lors de la récupération des apprenants : ' + response.status)
+                }
+            })
+            .then((groups) => {
+                displayGroups(groups)
+            })
+            .catch(function(error) {
+                console.error('Erreur lors de la récupération des apprenants : ' + error.message)
+            })
 
 }
 

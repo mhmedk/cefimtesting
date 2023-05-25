@@ -1,7 +1,7 @@
 [
   {
     "promotion": "2023",
-    "name": "Leparq",
+    "name": "Leparq (PHP)",
     "firstname": "Ryan",
     "gender": "man",
     "age": 18,
@@ -9,15 +9,15 @@
   },
   {
     "promotion": "2023",
-    "name": "Kasbi",
+    "name": "Kasbi (CSS)",
     "firstname": "Mohammed",
     "gender": "man",
     "age": 40,
-    "skills": "JS"
+    "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Dallay",
+    "name": "Dallay (HTML)",
     "firstname": "Cassandre FILLE",
     "gender": "woman",
     "age": 30,
@@ -25,7 +25,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Adam",
+    "name": "Adam (CSS)",
     "firstname": "Dorian",
     "gender": "man",
     "age": 20,
@@ -33,7 +33,7 @@
   },
   {
     "promotion": "2023",
-    "name": "John",
+    "name": "John (JAVA)",
     "firstname": "Doe",
     "gender": "man",
     "age": 65,
@@ -41,39 +41,39 @@
   },
   {
     "promotion": "2023",
-    "name": "Smith",
+    "name": "Smith (PHP)",
     "firstname": "Jane FILLE",
     "gender": "woman",
     "age": 25,
-    "skills": "Python"
+    "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Gonzalez",
+    "name": "Gonzalez (CSS)",
     "firstname": "Carlos",
     "gender": "man",
     "age": 35,
-    "skills": "C++"
+    "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Brown",
+    "name": "Brown (HTML)",
     "firstname": "Emily FILLE",
     "gender": "woman",
     "age": 28,
-    "skills": "JavaScript"
+    "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Johnson",
+    "name": "Johnson (HTML)",
     "firstname": "Michael",
     "gender": "man",
     "age": 22,
-    "skills": "Ruby"
+    "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Davis",
+    "name": "Davis (CSS)",
     "firstname": "Sophia FILLE",
     "gender": "woman",
     "age": 31,
@@ -81,31 +81,31 @@
   },
   {
     "promotion": "2023",
-    "name": "Anderson",
+    "name": "Anderson (PHP)",
     "firstname": "David",
     "gender": "man",
     "age": 29,
-    "skills": "Python"
+    "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Thomas",
+    "name": "Thomas (CSS)",
     "firstname": "Olivia FILLE",
     "gender": "woman",
     "age": 24,
-    "skills": "Java"
+    "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Lee",
+    "name": "Lee (JAVA)",
     "firstname": "Benjamin",
     "gender": "man",
     "age": 32,
-    "skills": "C#"
+    "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "Martinez",
+    "name": "Martinez (PHP)",
     "firstname": "Sofia FILLE",
     "gender": "woman",
     "age": 27,
@@ -113,47 +113,47 @@
   },
   {
     "promotion": "2023",
-    "name": "Clark",
+    "name": "Clark (HTML)",
     "firstname": "Daniel",
     "gender": "man",
     "age": 26,
-    "skills": "JavaScript"
+    "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Rodriguez",
+    "name": "Rodriguez (CSS)",
     "firstname": "Isabella FILLE",
     "gender": "woman",
     "age": 23,
-    "skills": "C++"
+    "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Taylor",
+    "name": "Taylor (PHP)",
     "firstname": "William",
     "gender": "man",
     "age": 33,
-    "skills": "Python"
+    "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Hernandez",
+    "name": "Hernandez (HTML)",
     "firstname": "Mia FILLE",
     "gender": "woman",
     "age": 21,
-    "skills": "Java"
+    "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Moore",
+    "name": "Moore (JAVA)",
     "firstname": "Ethan",
     "gender": "man",
     "age": 19,
-    "skills": "C#"
+    "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "White",
+    "name": "White (PHP)",
     "firstname": "Ava FILLE",
     "gender": "woman",
     "age": 34,
@@ -161,50 +161,42 @@
   },
   {
     "promotion": "2023",
-    "name": "Lewis",
+    "name": "Lewis (HTML)",
     "firstname": "Alexander",
     "gender": "man",
     "age": 37,
-    "skills": "JavaScript"
+    "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Walker",
+    "name": "Walker (CSS)",
     "firstname": "Chloe FILLE",
     "gender": "woman",
     "age": 29,
-    "skills": "C++"
+    "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Hall",
+    "name": "Hall (PHP)",
     "firstname": "Elijah",
     "gender": "man",
     "age": 25,
-    "skills": "Python"
+    "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Young",
+    "name": "Young (JAVA)",
     "firstname": "Grace FILLE",
     "gender": "woman",
     "age": 26,
-    "skills": "Java"
+    "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "Scott",
+    "name": "Scott (JAVA)",
     "firstname": "James",
     "gender": "man",
     "age": 31,
-    "skills": "C#"
-  },
-  {
-    "promotion": "2023",
-    "name": "Turner",
-    "firstname": "Lily FILLE",
-    "gender": "woman",
-    "age": 28,
-    "skills": "PHP"
+    "skills": "JAVA"
   }
 ]
