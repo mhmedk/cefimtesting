@@ -14,7 +14,7 @@ $apprenantsAge = learnerAge($bdd);
  * @param boolean $genderFilter Savoir si le filtre es actif.
  * @return array Les groupes formés avec les apprenants répartis avec le filtre.
  */
-function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter) {
+function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter, $apprenantsAge) {
     // Mélanger les apprenants aléatoirement
     shuffle($apprenants);
     $groupSize = intval($groupSize);
@@ -62,10 +62,10 @@ if ($maxApprenantsPerGroup <= 0) {
 }
 
 // Calculer le groupSize en fonction du nombre maximum d'apprenants par groupe et le nombre total d'apprenants
-$groupSize = min($maxApprenantsPerGroup, count($apprenantsAge));
+$groupSize = min($maxApprenantsPerGroup, count($apprenants));
 
 // Créer les groupes
-$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter);
+$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter, $apprenantsAge);
 
 // Renvoyer les groupes sous forme de données JSON
 header('Content-Type: application/json');

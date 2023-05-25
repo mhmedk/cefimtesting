@@ -1,8 +1,8 @@
 <?php
 // Paramètres de connexion à la base de données
-$serveur = "localhost:8889"; // Serveur de la base de données
+$serveur = "localhost:3307"; // Serveur de la base de données
 $utilisateur = "root"; // Nom d'utilisateur de la base de données
-$motDePasse = "root"; // Mot de passe de la base de données
+$motDePasse = ""; // Mot de passe de la base de données
 $nomBaseDeDonnees = "bewved"; // Nom de la base de données
 
 try {

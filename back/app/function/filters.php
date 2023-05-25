@@ -117,4 +117,47 @@ function skillsFilter ($apprenants, $groupSize) {
     return $mixedGroup;
 }
 
+function groupsAge($apprenantsAge, $groupSize) {
+
+    // Calculer le nombre de groupes nécessaires
+    $numGroups = ceil(count($apprenantsAge) / $groupSize);
+
+    //tableau vide
+    $groupsAge = array();
+
+    //tableau de jeune en découpant la liste $apprenantsAge et qui retourne 
+    $young = array_filter($apprenantsAge, function($apprenant) {
+        return $apprenant['age'] < 30;
+    });
+
+    //tableau de vieux en découpant la liste $apprenantsAge et qui retourne
+    $old = array_filter($apprenantsAge, function($apprenant) {
+        return $apprenant['age'] > 30;
+    });
+
+
+    for ($i = 0; $i < $numGroups; $i++) {
+        $group = [];
+
+        // Ajouter des apprenants jeune dans le groupe
+        $youngCont = min(ceil($groupSize / 2), count($young));
+        $group = array_merge($group, array_splice($young, 0, $youngCont));
+
+        // Ajouter des apprenants vieux dans le groupe
+        $oldCount = min($groupSize - count($group), count($old));
+        $group = array_merge($group, array_splice($old, 0, $oldCount));
+
+        // Ajouter le groupe à la liste des groupes
+        $groupsAge[] = $group;
+    }
+
+    // Ajouter les apprenants restants à un dernier groupe
+    $remainingGroup = array_merge($young, $old);
+    if (!empty($remainingGroup)) {
+        $groupsAge[] = $remainingGroup;
+    }
+
+    return $groupsAge;
+}
+
 ?>
