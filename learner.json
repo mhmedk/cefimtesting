@@ -1,0 +1,210 @@
+[
+  {
+    "promotion": "2023",
+    "name": "Leparq",
+    "firstname": "Ryan",
+    "gender": "man",
+    "age": 18,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Kasbi",
+    "firstname": "Mohammed",
+    "gender": "man",
+    "age": 40,
+    "skills": "JS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Dallay",
+    "firstname": "Cassandre FILLE",
+    "gender": "woman",
+    "age": 30,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Adam",
+    "firstname": "Dorian",
+    "gender": "man",
+    "age": 20,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "John",
+    "firstname": "Doe",
+    "gender": "man",
+    "age": 65,
+    "skills": "JAVA"
+  },
+  {
+    "promotion": "2023",
+    "name": "Smith",
+    "firstname": "Jane FILLE",
+    "gender": "woman",
+    "age": 25,
+    "skills": "Python"
+  },
+  {
+    "promotion": "2023",
+    "name": "Gonzalez",
+    "firstname": "Carlos",
+    "gender": "man",
+    "age": 35,
+    "skills": "C++"
+  },
+  {
+    "promotion": "2023",
+    "name": "Brown",
+    "firstname": "Emily FILLE",
+    "gender": "woman",
+    "age": 28,
+    "skills": "JavaScript"
+  },
+  {
+    "promotion": "2023",
+    "name": "Johnson",
+    "firstname": "Michael",
+    "gender": "man",
+    "age": 22,
+    "skills": "Ruby"
+  },
+  {
+    "promotion": "2023",
+    "name": "Davis",
+    "firstname": "Sophia FILLE",
+    "gender": "woman",
+    "age": 31,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Anderson",
+    "firstname": "David",
+    "gender": "man",
+    "age": 29,
+    "skills": "Python"
+  },
+  {
+    "promotion": "2023",
+    "name": "Thomas",
+    "firstname": "Olivia FILLE",
+    "gender": "woman",
+    "age": 24,
+    "skills": "Java"
+  },
+  {
+    "promotion": "2023",
+    "name": "Lee",
+    "firstname": "Benjamin",
+    "gender": "man",
+    "age": 32,
+    "skills": "C#"
+  },
+  {
+    "promotion": "2023",
+    "name": "Martinez",
+    "firstname": "Sofia FILLE",
+    "gender": "woman",
+    "age": 27,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Clark",
+    "firstname": "Daniel",
+    "gender": "man",
+    "age": 26,
+    "skills": "JavaScript"
+  },
+  {
+    "promotion": "2023",
+    "name": "Rodriguez",
+    "firstname": "Isabella FILLE",
+    "gender": "woman",
+    "age": 23,
+    "skills": "C++"
+  },
+  {
+    "promotion": "2023",
+    "name": "Taylor",
+    "firstname": "William",
+    "gender": "man",
+    "age": 33,
+    "skills": "Python"
+  },
+  {
+    "promotion": "2023",
+    "name": "Hernandez",
+    "firstname": "Mia FILLE",
+    "gender": "woman",
+    "age": 21,
+    "skills": "Java"
+  },
+  {
+    "promotion": "2023",
+    "name": "Moore",
+    "firstname": "Ethan",
+    "gender": "man",
+    "age": 19,
+    "skills": "C#"
+  },
+  {
+    "promotion": "2023",
+    "name": "White",
+    "firstname": "Ava FILLE",
+    "gender": "woman",
+    "age": 34,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Lewis",
+    "firstname": "Alexander",
+    "gender": "man",
+    "age": 37,
+    "skills": "JavaScript"
+  },
+  {
+    "promotion": "2023",
+    "name": "Walker",
+    "firstname": "Chloe FILLE",
+    "gender": "woman",
+    "age": 29,
+    "skills": "C++"
+  },
+  {
+    "promotion": "2023",
+    "name": "Hall",
+    "firstname": "Elijah",
+    "gender": "man",
+    "age": 25,
+    "skills": "Python"
+  },
+  {
+    "promotion": "2023",
+    "name": "Young",
+    "firstname": "Grace FILLE",
+    "gender": "woman",
+    "age": 26,
+    "skills": "Java"
+  },
+  {
+    "promotion": "2023",
+    "name": "Scott",
+    "firstname": "James",
+    "gender": "man",
+    "age": 31,
+    "skills": "C#"
+  },
+  {
+    "promotion": "2023",
+    "name": "Turner",
+    "firstname": "Lily FILLE",
+    "gender": "woman",
+    "age": 28,
+    "skills": "PHP"
+  }
+]

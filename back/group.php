@@ -5,10 +5,20 @@ require_once './app/function/requete.php';
 $apprenants = selectLearner($bdd);
 
 // Fonction pour constituer les groupes
-function createGroups($apprenants, $groupSize) {
+function createGroups($apprenants, $groupSize, $genderFilter) {
     // Mélanger les apprenants aléatoirement
     shuffle($apprenants);
+    $groupSize = intval($groupSize);
 
+    
+    if($genderFilter){
+        return genderFilter($apprenants, $groupSize);
+    }else{
+        return groupsNoFilter($apprenants, $groupSize);
+    }
+    
+}
+function groupsNoFilter($apprenants, $groupSize,){
     // Calculer le nombre de groupes nécessaires
     $numGroups = ceil(count($apprenants) / $groupSize);
 
@@ -19,11 +29,55 @@ function createGroups($apprenants, $groupSize) {
         $groups[] = array_slice($apprenants, $i * $groupSize, $groupSize);
     }
 
-    return $groups;
+    return $groups;    
 }
+function genderFilter($apprenants, $groupSize) {
+    // Trier les apprenants par genre
+    $manApprenants = array_filter($apprenants, function($apprenant) {
+        return $apprenant['gender'] === 'man';
+    });
+    $womanApprenants = array_filter($apprenants, function($apprenant) {
+        return $apprenant['gender'] === 'woman';
+    });
+
+    // Mélanger les apprenants de chaque genre
+    shuffle($manApprenants);
+    shuffle($womanApprenants);
+
+    // Créer les groupes mixtes
+    $mixedGroup = [];
+    $numGroups = ceil(count($apprenants) / $groupSize);
+
+    for ($i = 0; $i < $numGroups; $i++) {
+        $group = [];
+
+        // Ajouter des apprenants de genre masculin dans le groupe
+        $manCount = min(ceil($groupSize / 2), count($manApprenants));
+        $group = array_merge($group, array_splice($manApprenants, 0, $manCount));
+
+        // Ajouter des apprenants de genre féminin dans le groupe
+        $womanCount = min($groupSize - count($group), count($womanApprenants));
+        $group = array_merge($group, array_splice($womanApprenants, 0, $womanCount));
+
+        // Ajouter le groupe à la liste des groupes
+        $mixedGroup[] = $group;
+    }
+
+    // Ajouter les apprenants restants à un dernier groupe
+    $remainingGroup = array_merge($manApprenants, $womanApprenants);
+    if (!empty($remainingGroup)) {
+        $mixedGroup[] = $remainingGroup;
+    }
+
+    return $mixedGroup;
+}
+
+
 
 // Récupérer le nombre maximum d'apprenants par groupe depuis les paramètres de la requête
 $maxApprenantsPerGroup = isset($_GET['maxApprenantsPerGroup']) ? intval($_GET['maxApprenantsPerGroup']) : 0;
+$genderFilter = isset($_GET['genderfilter']) ? filter_var($_GET['genderfilter'], FILTER_VALIDATE_BOOLEAN) : false;
+
 
 // Vérifier la validité du nombre maximum d'apprenants par groupe
 if ($maxApprenantsPerGroup <= 0) {
@@ -34,7 +88,7 @@ if ($maxApprenantsPerGroup <= 0) {
 $groupSize = min($maxApprenantsPerGroup, count($apprenants));
 
 // Créer les groupes
-$groups = createGroups($apprenants, $groupSize);
+$groups = createGroups($apprenants, $groupSize, $genderFilter);
 
 // Renvoyer les groupes sous forme de données JSON
 header('Content-Type: application/json');
