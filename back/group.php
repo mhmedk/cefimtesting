@@ -65,8 +65,6 @@ function groupsAge($apprenantsAge, $groupSize) {
     $old = array_filter($apprenantsAge, function($apprenant) {
         return $apprenant['age'] > 30;
     });
-    var_dump($young);
-    var_dump($old);
 
 
     for ($i = 0; $i < $numGroups; $i++) {
@@ -109,6 +107,6 @@ $ageFilter = isset($_GET['ageFilter']) ? filter_var($_GET['ageFilter'], FILTER_V
 $groups = createGroups($apprenantsAge, $groupSize, $ageFilter);
 
 // Renvoyer les groupes sous forme de données JSON
-//header('Content-Type: application/json');
-//echo json_encode($groups);
+header('Content-Type: application/json');
+echo json_encode($groups);
 ?>
