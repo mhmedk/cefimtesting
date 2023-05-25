@@ -115,5 +115,19 @@ function selectLearner($bdd){
     }
 }
 
+function learnerAge($bdd){
+    try {
+       // Préparer la requête PDO
+       $select = $bdd->prepare("SELECT * FROM apprenants ORDER BY age;");
+       // Exécuter la requête
+       $select->execute();
+       // Récupérer le nombre de personnes
+       $result = $select->fetchAll(PDO::FETCH_ASSOC);
+      return $result;
+    } catch (PDOException $e) {
+        echo "Erreur PDO lors de la préparation de la requête : " . $e->getMessage();
+    }
+}
+
 
 ?>

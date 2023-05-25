@@ -9,10 +9,13 @@ function getApprenants(event) {
 
     event.preventDefault()
 
-    const maxApprenantsPerGroup = document.getElementById('groupSize').value
+    const ageCheckbox = document.getElementById('age');
+    const ageFilter = ageCheckbox.checked;
+
+    const maxApprenantsPerGroup = document.getElementById('groupSize').value;
 
     // Faire une requête fetch pour obtenir les apprenants
-    fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup)
+    fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup + '&agefilter=' + ageFilter.toString())
         .then((response) => {
             if (response.ok) {
                 return response.json()

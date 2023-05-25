@@ -1,0 +1,202 @@
+[
+  {
+    "promotion": "2023",
+    "name": "Leparq (PHP)",
+    "firstname": "Ryan [18]",
+    "gender": "man",
+    "age": 18,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Kasbi (CSS)",
+    "firstname": "Mohammed [40]",
+    "gender": "man",
+    "age": 40,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Dallay (HTML)",
+    "firstname": "Cassandre FILLE [30]",
+    "gender": "woman",
+    "age": 30,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Adam (CSS)",
+    "firstname": "Dorian [20]",
+    "gender": "man",
+    "age": 20,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "John (JAVA)",
+    "firstname": "Doe [65]",
+    "gender": "man",
+    "age": 65,
+    "skills": "JAVA"
+  },
+  {
+    "promotion": "2023",
+    "name": "Smith (PHP)",
+    "firstname": "Jane FILLE [25]",
+    "gender": "woman",
+    "age": 25,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Gonzalez (CSS)",
+    "firstname": "Carlos [35]",
+    "gender": "man",
+    "age": 35,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Brown (HTML)",
+    "firstname": "Emily FILLE [28]",
+    "gender": "woman",
+    "age": 28,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Johnson (HTML)",
+    "firstname": "Michael [22]",
+    "gender": "man",
+    "age": 22,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Davis (CSS)",
+    "firstname": "Sophia FILLE [31]",
+    "gender": "woman",
+    "age": 31,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Anderson (PHP)",
+    "firstname": "David [29]",
+    "gender": "man",
+    "age": 29,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Thomas (CSS)",
+    "firstname": "Olivia FILLE [24]",
+    "gender": "woman",
+    "age": 24,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Lee (JAVA)",
+    "firstname": "Benjamin [32]",
+    "gender": "man",
+    "age": 32,
+    "skills": "JAVA"
+  },
+  {
+    "promotion": "2023",
+    "name": "Martinez (PHP)",
+    "firstname": "Sofia FILLE [27]",
+    "gender": "woman",
+    "age": 27,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Clark (HTML)",
+    "firstname": "Daniel [26]",
+    "gender": "man",
+    "age": 26,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Rodriguez (CSS)",
+    "firstname": "Isabella FILLE [23]",
+    "gender": "woman",
+    "age": 23,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Taylor (PHP)",
+    "firstname": "William [33]",
+    "gender": "man",
+    "age": 33,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Hernandez (HTML)",
+    "firstname": "Mia FILLE [21]",
+    "gender": "woman",
+    "age": 21,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Moore (JAVA)",
+    "firstname": "Ethan [19]",
+    "gender": "man",
+    "age": 19,
+    "skills": "JAVA"
+  },
+  {
+    "promotion": "2023",
+    "name": "White (PHP)",
+    "firstname": "Ava FILLE [34]",
+    "gender": "woman",
+    "age": 34,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Lewis (HTML)",
+    "firstname": "Alexander [37]",
+    "gender": "man",
+    "age": 37,
+    "skills": "HTML"
+  },
+  {
+    "promotion": "2023",
+    "name": "Walker (CSS)",
+    "firstname": "Chloe FILLE [29]",
+    "gender": "woman",
+    "age": 29,
+    "skills": "CSS"
+  },
+  {
+    "promotion": "2023",
+    "name": "Hall (PHP)",
+    "firstname": "Elijah [25]",
+    "gender": "man",
+    "age": 25,
+    "skills": "PHP"
+  },
+  {
+    "promotion": "2023",
+    "name": "Young (JAVA)",
+    "firstname": "Grace FILLE [26]",
+    "gender": "woman",
+    "age": 26,
+    "skills": "JAVA"
+  },
+  {
+    "promotion": "2023",
+    "name": "Scott (JAVA)",
+    "firstname": "James [31]",
+    "gender": "man",
+    "age": 31,
+    "skills": "JAVA"
+  }
+]
