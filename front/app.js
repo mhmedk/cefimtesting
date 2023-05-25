@@ -38,7 +38,12 @@ function displayGroups(apprenantsFiltres) {
     const result = document.getElementById("resultats")
     result.innerHTML = ""
 
-    apprenantsFiltres.forEach((apprenantGroup) => {
+    apprenantsFiltres.forEach((apprenantGroup, index) => {
+
+        indexVal = index + 1
+
+        let h3 = document.createElement("h3")
+        h3.textContent = "Groupe " + indexVal
 
         let ul = document.createElement("ul")
         apprenantGroup.forEach((apprenant) => {
@@ -47,6 +52,7 @@ function displayGroups(apprenantsFiltres) {
             ul.appendChild(item)
 
         })
+        result.appendChild(h3)
         result.appendChild(ul)
 
     })
