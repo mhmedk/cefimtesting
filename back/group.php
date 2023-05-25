@@ -4,7 +4,14 @@ require_once './app/function/requete.php';
 
 $apprenants = selectLearner($bdd);
 
-// Fonction pour constituer les groupes
+/**
+ * Fonction pour créer des groupes avec ou sans options de filtrages.
+ *
+ * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
+ * @param int $groupSize Le nombre d'apprenants par groupe.
+ * @param boolean $genderFilter Savoir si le filtre es actif.
+ * @return array Les groupes formés avec les apprenants répartis avec le filtre.
+ */
 function createGroups($apprenants, $groupSize, $genderFilter) {
     // Mélanger les apprenants aléatoirement
     shuffle($apprenants);
@@ -18,6 +25,14 @@ function createGroups($apprenants, $groupSize, $genderFilter) {
     }
     
 }
+
+/**
+ * Fonction pour créer des groupes sans options de filtrages.
+ *
+ * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
+ * @param int $groupSize Le nombre d'apprenants par groupe.
+ * @return array Les groupes formés avec les apprenants.
+ */
 function groupsNoFilter($apprenants, $groupSize,){
     // Calculer le nombre de groupes nécessaires
     $numGroups = ceil(count($apprenants) / $groupSize);
@@ -31,6 +46,14 @@ function groupsNoFilter($apprenants, $groupSize,){
 
     return $groups;    
 }
+
+/**
+ * Fonction pour créer des groupes mixtes en répartissant les apprenants par genre.
+ *
+ * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
+ * @param int $groupSize Le nombre d'apprenants par groupe.
+ * @return array Les groupes mixtes formés avec les apprenants répartis par genre.
+ */
 function genderFilter($apprenants, $groupSize) {
     // Trier les apprenants par genre
     $manApprenants = array_filter($apprenants, function($apprenant) {
