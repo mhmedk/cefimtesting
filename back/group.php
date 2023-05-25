@@ -13,33 +13,49 @@ $apprenants = selectLearner($bdd);
  * @param boolean $genderFilter Savoir si le filtre es actif.
  * @return array Les groupes formés avec les apprenants répartis avec le filtre.
  */
-function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter) {
+function createGroups($apprenants, $groupSize, $genderFilter) {
     // Mélanger les apprenants aléatoirement
     shuffle($apprenants);
     $groupSize = intval($groupSize);
 
     $ageFilter = false;
+    $skillsFilter = false;
 
     if($genderFilter || $ageFilter || $skillsFilter){
         if($genderFilter){
             return genderFilter($apprenants, $groupSize);
         }
-        if($ageFilter){
-            //return ageFilter($apprenants, $groupSize);
-        }
         if($skillsFilter){
             return skillsFilter($apprenants, $groupSize);
         }
+        if($ageFilter){
+
+        }
+
+
+        if($genderFilter && $ageFilter){
+        }
+        if($genderFilter && $skillsFilter){
+            //return genderAndSkillsFilter($apprenants, $groupSize);
+        }
+        
+       
+        if($ageFilter && $skillsFilter){
+        }
+        if($genderFilter && $ageFilter && $skillsFilter){
+        }
+
     }else{
         return groupsNoFilter($apprenants, $groupSize);
     }
+    
 }
+
+
 
 // Récupérer le nombre maximum d'apprenants par groupe depuis les paramètres de la requête
 $maxApprenantsPerGroup = isset($_GET['maxApprenantsPerGroup']) ? intval($_GET['maxApprenantsPerGroup']) : 0;
-// Récupérer les différents filtres depuis les paramètres de la requête
 $genderFilter = isset($_GET['genderfilter']) ? filter_var($_GET['genderfilter'], FILTER_VALIDATE_BOOLEAN) : false;
-$skillsFilter = isset($_GET['skillsFilter']) ? filter_var($_GET['skillsFilter'], FILTER_VALIDATE_BOOLEAN) : false;
 
 
 // Vérifier la validité du nombre maximum d'apprenants par groupe
@@ -51,11 +67,9 @@ if ($maxApprenantsPerGroup <= 0) {
 $groupSize = min($maxApprenantsPerGroup, count($apprenants));
 
 // Créer les groupes
-$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter);
+$groups = createGroups($apprenants, $groupSize, $genderFilter);
 
-// var_dump($groups);
-
-// // Renvoyer les groupes sous forme de données JSON
+// Renvoyer les groupes sous forme de données JSON
 header('Content-Type: application/json');
 echo json_encode($groups);
 ?>
