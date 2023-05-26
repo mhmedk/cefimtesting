@@ -19,8 +19,6 @@ function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ag
     shuffle($apprenants);
     $groupSize = intval($groupSize);
 
-    $ageFilter = false;
-
     if($genderFilter || $ageFilter || $skillsFilter){
         if($genderFilter){
             return genderFilter($apprenants, $groupSize);
