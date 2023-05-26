@@ -12,6 +12,9 @@ $apprenantsAge = learnerAge($bdd);
  * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
  * @param int $groupSize Le nombre d'apprenants par groupe.
  * @param boolean $genderFilter Savoir si le filtre es actif.
+ * @param boolean $skillsFilter Savoir si le filtre es actif.
+ * @param boolean $ageFilter Savoir si le filtre es actif.
+ * @param array $apprenantsAge Les données des apprenants sous forme de tableau associatif trier par ages.
  * @return array Les groupes formés avec les apprenants répartis avec le filtre.
  */
 function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter, $apprenantsAge) {

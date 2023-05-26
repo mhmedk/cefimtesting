@@ -152,7 +152,7 @@ if(isset($_GET['reg_err']))
               <!--Compétences-->
               <div class="mb-3">
                 <label for="skills" class="form-label">Compétences : </label>
-                <textarea class="form-control"  name="skills" id="skills" rows="2" required></textarea>
+                <input class="form-control"  name="skills" id="skills" rows="2" required>
               </div>
               <button type="submit" class="btn btn-primary">Envoyer</button>
           </form>

@@ -37,25 +37,21 @@ function genderFilter($apprenants, $groupSize) {
         return $apprenant['gender'] === 'woman';
     });
 
-    // Mélanger les apprenants de chaque genre
-    //shuffle($manApprenants);
-    //shuffle($womanApprenants);
-
     // Créer les groupes mixtes
     $mixedGroup = [];
     $numGroups = ceil(count($apprenants) / $groupSize);
 
     for ($i = 0; $i < $numGroups; $i++) {
         $group = [];
-    
+
         // Ajouter des apprenants de genre masculin dans le groupe
         $manCount = min(ceil($groupSize / 2), count($manApprenants));
         $group = array_merge($group, array_splice($manApprenants, 0, $manCount));
-    
+
         // Ajouter des apprenants de genre féminin dans le groupe
         $womanCount = min($groupSize - count($group), count($womanApprenants));
         $group = array_merge($group, array_splice($womanApprenants, 0, $womanCount));
-    
+
         // Ajouter le groupe à la liste des groupes
         $mixedGroup[] = $group;
     }
@@ -85,10 +81,6 @@ function skillsFilter ($apprenants, $groupSize) {
         return $apprenant['skills'] === 'HTML' || $apprenant['skills'] === 'CSS';
     });
 
-    // Mélanger les apprenants de chaque groupe
-    //shuffle($apprenantsBack);
-    //shuffle($apprenantsFront);
-
     // Créer les groupes mixtes
     $mixedGroup = [];
     $numGroups = ceil(count($apprenants) / $groupSize);
@@ -117,6 +109,13 @@ function skillsFilter ($apprenants, $groupSize) {
     return $mixedGroup;
 }
 
+/**
+ * Fonction pour créer des groupes mixtes en répartissant les apprenants par ages.
+ *
+ * @param array $apprenantsAge Les données des apprenants sous forme de tableau associatif trier ages.
+ * @param int $groupSize Le nombre d'apprenants par groupe.
+ * @return array Les groupes mixtes formés avec les apprenants répartis par ages.
+ */
 function groupsAge($apprenantsAge, $groupSize) {
 
     // Calculer le nombre de groupes nécessaires

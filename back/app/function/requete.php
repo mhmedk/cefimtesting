@@ -96,6 +96,12 @@ function selectLearner($bdd){
     }
 }
 
+
+/**
+ * Fonction pour sélectionner tous les apprenants dans la base de données trier par ages.
+ * @param PDO $bdd L'objet de connexion à la base de données.
+ * @return array Les données des apprenants sous forme de tableau associatif.
+ */
 function learnerAge($bdd){
     try {
        // Préparer la requête PDO
