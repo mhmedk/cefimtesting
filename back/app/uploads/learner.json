@@ -1,200 +1,200 @@
 [
   {
     "promotion": "2023",
-    "name": "Leparq (PHP)",
-    "firstname": "Ryan [18]",
+    "name": "Leparq (PHP), 18",
+    "firstname": "Ryan",
     "gender": "man",
     "age": 18,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Kasbi (CSS)",
-    "firstname": "Mohammed [40]",
+    "name": "Kasbi (CSS), 40",
+    "firstname": "Mohammed",
     "gender": "man",
     "age": 40,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Dallay (HTML)",
-    "firstname": "Cassandre FILLE [30]",
+    "name": "Dallay (HTML), 30",
+    "firstname": "Cassandre FILLE",
     "gender": "woman",
     "age": 30,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Adam (CSS)",
-    "firstname": "Dorian [20]",
+    "name": "Adam (CSS), 20",
+    "firstname": "Dorian",
     "gender": "man",
     "age": 20,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "John (JAVA)",
-    "firstname": "Doe [65]",
+    "name": "John (JAVA), 65",
+    "firstname": "Doe",
     "gender": "man",
     "age": 65,
     "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "Smith (PHP)",
-    "firstname": "Jane FILLE [25]",
+    "name": "Smith (PHP), 25",
+    "firstname": "Jane FILLE",
     "gender": "woman",
     "age": 25,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Gonzalez (CSS)",
-    "firstname": "Carlos [35]",
+    "name": "Gonzalez (CSS), 35",
+    "firstname": "Carlos",
     "gender": "man",
     "age": 35,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Brown (HTML)",
-    "firstname": "Emily FILLE [28]",
+    "name": "Brown (HTML), 28",
+    "firstname": "Emily FILLE",
     "gender": "woman",
     "age": 28,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Johnson (HTML)",
-    "firstname": "Michael [22]",
+    "name": "Johnson (HTML), 22",
+    "firstname": "Michael",
     "gender": "man",
     "age": 22,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Davis (CSS)",
-    "firstname": "Sophia FILLE [31]",
+    "name": "Davis (CSS), 31",
+    "firstname": "Sophia FILLE",
     "gender": "woman",
     "age": 31,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Anderson (PHP)",
-    "firstname": "David [29]",
+    "name": "Anderson (PHP), 29",
+    "firstname": "David",
     "gender": "man",
     "age": 29,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Thomas (CSS)",
-    "firstname": "Olivia FILLE [24]",
+    "name": "Thomas (CSS), 24",
+    "firstname": "Olivia FILLE",
     "gender": "woman",
     "age": 24,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Lee (JAVA)",
-    "firstname": "Benjamin [32]",
+    "name": "Lee (JAVA), 32",
+    "firstname": "Benjamin",
     "gender": "man",
     "age": 32,
     "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "Martinez (PHP)",
-    "firstname": "Sofia FILLE [27]",
+    "name": "Martinez (PHP), 27",
+    "firstname": "Sofia FILLE",
     "gender": "woman",
     "age": 27,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Clark (HTML)",
-    "firstname": "Daniel [26]",
+    "name": "Clark (HTML), 26",
+    "firstname": "Daniel",
     "gender": "man",
     "age": 26,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Rodriguez (CSS)",
-    "firstname": "Isabella FILLE [23]",
+    "name": "Rodriguez (CSS), 23",
+    "firstname": "Isabella FILLE",
     "gender": "woman",
     "age": 23,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Taylor (PHP)",
-    "firstname": "William [33]",
+    "name": "Taylor (PHP), 33",
+    "firstname": "William",
     "gender": "man",
     "age": 33,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Hernandez (HTML)",
-    "firstname": "Mia FILLE [21]",
+    "name": "Hernandez (HTML), 21",
+    "firstname": "Mia FILLE",
     "gender": "woman",
     "age": 21,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Moore (JAVA)",
-    "firstname": "Ethan [19]",
+    "name": "Moore (JAVA), 19",
+    "firstname": "Ethan",
     "gender": "man",
     "age": 19,
     "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "White (PHP)",
-    "firstname": "Ava FILLE [34]",
+    "name": "White (PHP), 34",
+    "firstname": "Ava FILLE",
     "gender": "woman",
     "age": 34,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Lewis (HTML)",
-    "firstname": "Alexander [37]",
+    "name": "Lewis (HTML), 37",
+    "firstname": "Alexander",
     "gender": "man",
     "age": 37,
     "skills": "HTML"
   },
   {
     "promotion": "2023",
-    "name": "Walker (CSS)",
-    "firstname": "Chloe FILLE [29]",
+    "name": "Walker (CSS), 29",
+    "firstname": "Chloe FILLE",
     "gender": "woman",
     "age": 29,
     "skills": "CSS"
   },
   {
     "promotion": "2023",
-    "name": "Hall (PHP)",
-    "firstname": "Elijah [25]",
+    "name": "Hall (PHP), 25",
+    "firstname": "Elijah",
     "gender": "man",
     "age": 25,
     "skills": "PHP"
   },
   {
     "promotion": "2023",
-    "name": "Young (JAVA)",
-    "firstname": "Grace FILLE [26]",
+    "name": "Young (JAVA), 26",
+    "firstname": "Grace FILLE",
     "gender": "woman",
     "age": 26,
     "skills": "JAVA"
   },
   {
     "promotion": "2023",
-    "name": "Scott (JAVA)",
-    "firstname": "James [31]",
+    "name": "Scott (JAVA), 31",
+    "firstname": "James",
     "gender": "man",
     "age": 31,
     "skills": "JAVA"

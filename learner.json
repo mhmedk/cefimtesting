@@ -1,7 +1,7 @@
 [
   {
     "promotion": "2023",
-    "name": "Leparq (PHP)",
+    "name": "Leparq (PHP), 18",
     "firstname": "Ryan",
     "gender": "man",
     "age": 18,
@@ -9,7 +9,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Kasbi (CSS)",
+    "name": "Kasbi (CSS), 40",
     "firstname": "Mohammed",
     "gender": "man",
     "age": 40,
@@ -17,7 +17,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Dallay (HTML)",
+    "name": "Dallay (HTML), 30",
     "firstname": "Cassandre FILLE",
     "gender": "woman",
     "age": 30,
@@ -25,7 +25,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Adam (CSS)",
+    "name": "Adam (CSS), 20",
     "firstname": "Dorian",
     "gender": "man",
     "age": 20,
@@ -33,7 +33,7 @@
   },
   {
     "promotion": "2023",
-    "name": "John (JAVA)",
+    "name": "John (JAVA), 65",
     "firstname": "Doe",
     "gender": "man",
     "age": 65,
@@ -41,7 +41,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Smith (PHP)",
+    "name": "Smith (PHP), 25",
     "firstname": "Jane FILLE",
     "gender": "woman",
     "age": 25,
@@ -49,7 +49,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Gonzalez (CSS)",
+    "name": "Gonzalez (CSS), 35",
     "firstname": "Carlos",
     "gender": "man",
     "age": 35,
@@ -57,7 +57,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Brown (HTML)",
+    "name": "Brown (HTML), 28",
     "firstname": "Emily FILLE",
     "gender": "woman",
     "age": 28,
@@ -65,7 +65,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Johnson (HTML)",
+    "name": "Johnson (HTML), 22",
     "firstname": "Michael",
     "gender": "man",
     "age": 22,
@@ -73,7 +73,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Davis (CSS)",
+    "name": "Davis (CSS), 31",
     "firstname": "Sophia FILLE",
     "gender": "woman",
     "age": 31,
@@ -81,7 +81,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Anderson (PHP)",
+    "name": "Anderson (PHP), 29",
     "firstname": "David",
     "gender": "man",
     "age": 29,
@@ -89,7 +89,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Thomas (CSS)",
+    "name": "Thomas (CSS), 24",
     "firstname": "Olivia FILLE",
     "gender": "woman",
     "age": 24,
@@ -97,7 +97,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Lee (JAVA)",
+    "name": "Lee (JAVA), 32",
     "firstname": "Benjamin",
     "gender": "man",
     "age": 32,
@@ -105,7 +105,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Martinez (PHP)",
+    "name": "Martinez (PHP), 27",
     "firstname": "Sofia FILLE",
     "gender": "woman",
     "age": 27,
@@ -113,7 +113,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Clark (HTML)",
+    "name": "Clark (HTML), 26",
     "firstname": "Daniel",
     "gender": "man",
     "age": 26,
@@ -121,7 +121,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Rodriguez (CSS)",
+    "name": "Rodriguez (CSS), 23",
     "firstname": "Isabella FILLE",
     "gender": "woman",
     "age": 23,
@@ -129,7 +129,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Taylor (PHP)",
+    "name": "Taylor (PHP), 33",
     "firstname": "William",
     "gender": "man",
     "age": 33,
@@ -137,7 +137,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Hernandez (HTML)",
+    "name": "Hernandez (HTML), 21",
     "firstname": "Mia FILLE",
     "gender": "woman",
     "age": 21,
@@ -145,7 +145,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Moore (JAVA)",
+    "name": "Moore (JAVA), 19",
     "firstname": "Ethan",
     "gender": "man",
     "age": 19,
@@ -153,7 +153,7 @@
   },
   {
     "promotion": "2023",
-    "name": "White (PHP)",
+    "name": "White (PHP), 34",
     "firstname": "Ava FILLE",
     "gender": "woman",
     "age": 34,
@@ -161,7 +161,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Lewis (HTML)",
+    "name": "Lewis (HTML), 37",
     "firstname": "Alexander",
     "gender": "man",
     "age": 37,
@@ -169,7 +169,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Walker (CSS)",
+    "name": "Walker (CSS), 29",
     "firstname": "Chloe FILLE",
     "gender": "woman",
     "age": 29,
@@ -177,7 +177,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Hall (PHP)",
+    "name": "Hall (PHP), 25",
     "firstname": "Elijah",
     "gender": "man",
     "age": 25,
@@ -185,7 +185,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Young (JAVA)",
+    "name": "Young (JAVA), 26",
     "firstname": "Grace FILLE",
     "gender": "woman",
     "age": 26,
@@ -193,7 +193,7 @@
   },
   {
     "promotion": "2023",
-    "name": "Scott (JAVA)",
+    "name": "Scott (JAVA), 31",
     "firstname": "James",
     "gender": "man",
     "age": 31,
