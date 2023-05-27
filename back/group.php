@@ -3,21 +3,21 @@ require_once './config/database.php';
 require_once './app/function/requete.php';
 require_once './app/function/filters.php';
 
+// Get learners in database
 $apprenants = selectLearner($bdd);
-$apprenantsAge = learnerAge($bdd);
 
 /**
- * Fonction pour créer des groupes avec ou sans options de filtrages.
+ * Function to create groups based on filters
  *
- * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
- * @param int $groupSize Le nombre d'apprenants par groupe.
- * @param boolean $genderFilter Savoir si le filtre es actif.
- * @param boolean $skillsFilter Savoir si le filtre es actif.
- * @param boolean $ageFilter Savoir si le filtre es actif.
- * @param array $apprenantsAge Les données des apprenants sous forme de tableau associatif trier par ages.
- * @return array Les groupes formés avec les apprenants répartis avec le filtre.
+ * @param array $apprenants Learner data in the form of an associative table
+ * @param int $groupSize Number of learners per group
+ * @param boolean $genderFilter Find out if the filter is active
+ * @param boolean $skillsFilter Find out if the filter is active
+ * @param boolean $ageFilter Find out if the filter is active
+ * @return array Groups formed with learners divided into
  */
-function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter, $apprenantsAge) {
+function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter) {
+
     // Mélanger les apprenants aléatoirement
     shuffle($apprenants);
     $groupSize = intval($groupSize);
@@ -30,7 +30,7 @@ function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ag
             return skillsFilter($apprenants, $groupSize);
         }
         if($ageFilter){
-            return groupsAge($apprenantsAge, $groupSize);
+            return groupsAge($apprenants, $groupSize);
         }
 
         if($genderFilter && $ageFilter){
@@ -53,7 +53,7 @@ function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ag
 
 // Récupérer le nombre maximum d'apprenants par groupe depuis les paramètres de la requête
 $maxApprenantsPerGroup = isset($_GET['maxApprenantsPerGroup']) ? intval($_GET['maxApprenantsPerGroup']) : 0;
-$genderFilter = isset($_GET['genderfilter']) ? filter_var($_GET['genderfilter'], FILTER_VALIDATE_BOOLEAN) : false;
+$genderFilter = isset($_GET['genderFilter']) ? filter_var($_GET['genderFilter'], FILTER_VALIDATE_BOOLEAN) : false;
 $skillsFilter = isset($_GET['skillsFilter']) ? filter_var($_GET['skillsFilter'], FILTER_VALIDATE_BOOLEAN) : false;
 $ageFilter = isset($_GET['ageFilter']) ? filter_var($_GET['ageFilter'], FILTER_VALIDATE_BOOLEAN) : false;
 
@@ -66,7 +66,7 @@ if ($maxApprenantsPerGroup <= 0) {
 $groupSize = min($maxApprenantsPerGroup, count($apprenants));
 
 // Créer les groupes
-$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter, $apprenantsAge);
+$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter);
 
 // Renvoyer les groupes sous forme de données JSON
 header('Content-Type: application/json');
