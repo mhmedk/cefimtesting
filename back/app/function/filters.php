@@ -210,19 +210,19 @@ function ageFilter ($apprenants, $groupSize) {
         for ($j=0; $j < $groupSize; $j++) {
 
             // If there are more young than old, we start with the group of young and add one to the group
-            if ($toPick === 'young' && isset($youngLearners[$youngI])) {
-                $group[] = $youngLearners[$youngI];
+            if ($toPick === 'young' && isset($youngerLearners[$youngI])) {
+                $group[] = $youngerLearners[$youngI];
                 $toPick = 'old';
                 $youngI++;
             } else {
                 // If there are more old than young, we check that the learner exists and add him to the group
-                if (isset($oldLearners[$oldI])) {
-                    $group[] = $oldLearners[$oldI];
+                if (isset($olderLearners[$oldI])) {
+                    $group[] = $olderLearners[$oldI];
                     $toPick = 'old';
                     $oldI++;
-                } elseif (isset($youngLearners[$youngI])) {
+                } elseif (isset($youngerLearners[$youngI])) {
                     // Otherwise, if it was the old's turn and there were none left, add another young
-                    $group[] = $youngLearners[$youngI];
+                    $group[] = $youngerLearners[$youngI];
                     $toPick = 'old';
                     $youngI++;
                 }
