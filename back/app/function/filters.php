@@ -6,7 +6,7 @@
  * @param int $groupSize Number of learners per group
  * @return array Groups formed with learners
  */
-function groupsNoFilter($apprenants, $groupSize){
+function groupsNoFilter ($apprenants, $groupSize){
 
     // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
@@ -26,13 +26,13 @@ function groupsNoFilter($apprenants, $groupSize){
 }
 
 /**
- * Function for creating mixed groups of learners by gender
+ * Function to create mixed groups of learners according to their gender
  *
  * @param array $apprenants Learners data in the form of an associative table
  * @param int $groupSize Number of learners per group
  * @return array Groups formed with learners by gender
  */
-function genderFilter($apprenants, $groupSize) {
+function genderFilter ($apprenants, $groupSize) {
 
     // Separate learners by gender into 2 array
     $maleLearners = array();
@@ -166,53 +166,74 @@ function skillsFilter ($apprenants, $groupSize) {
 }
 
 /**
- * Fonction pour créer des groupes mixtes en répartissant les apprenants par ages.
+ * Function to create mixed groups of learners according to their age
  *
  * @param array $apprenants Learners data in the form of an associative table
  * @param int $groupSize Number of learners per group
- * @return array Les groupes mixtes formés avec les apprenants répartis par ages.
+ * @return array Groups formed with learners by age
  */
-function groupsAge($apprenantsAge, $groupSize) {
+function ageFilter ($apprenants, $groupSize) {
 
-    // Calculer le nombre de groupes nécessaires
-    $numGroups = ceil(count($apprenantsAge) / $groupSize);
+    // Separate learners by age into 2 array
+    $youngerLearners = array();
+    $olderLearners = array();
 
-    //tableau vide
-    $groupsAge = array();
-
-    //tableau de jeune en découpant la liste $apprenantsAge et qui retourne
-    $young = array_filter($apprenantsAge, function($apprenant) {
-        return $apprenant['age'] < 30;
-    });
-
-    //tableau de vieux en découpant la liste $apprenantsAge et qui retourne
-    $old = array_filter($apprenantsAge, function($apprenant) {
-        return $apprenant['age'] > 30;
-    });
-
-
-    for ($i = 0; $i < $numGroups; $i++) {
-        $group = [];
-
-        // Ajouter des apprenants jeune dans le groupe
-        $youngCont = min(ceil($groupSize / 2), count($young));
-        $group = array_merge($group, array_splice($young, 0, $youngCont));
-
-        // Ajouter des apprenants vieux dans le groupe
-        $oldCount = min($groupSize - count($group), count($old));
-        $group = array_merge($group, array_splice($old, 0, $oldCount));
-
-        // Ajouter le groupe à la liste des groupes
-        $groupsAge[] = $group;
+    foreach ($apprenants as $apprenant) {
+        if ($apprenant['age'] <= 30) {
+            $youngerLearners[] = $apprenant;
+        } else {
+            $olderLearners[] = $apprenant;
+        }
     }
 
-    // Ajouter les apprenants restants à un dernier groupe
-    $remainingGroup = array_merge($young, $old);
-    if (!empty($remainingGroup)) {
-        $groupsAge[] = $remainingGroup;
-    }
+    // Create final array empty
+    $groups = array();
 
-    return $groupsAge;
+    // Calculate the number of groups required
+    $numGroups = ceil(count($apprenants) / $groupSize);
+
+    // Pick the biggest group to start with
+    if (count($youngerLearners) > count($olderLearners)) {
+        $toPick = 'young';
+    } else {
+        $toPick = 'old';
+    };
+
+    // Index for each group
+    $youngI = 0;
+    $oldI = 0;
+
+    for ($i=0; $i < $numGroups; $i++) {
+
+        $group = array();
+
+        for ($j=0; $j < $groupSize; $j++) {
+
+            // If there are more young than old, we start with the group of young and add one to the group
+            if ($toPick === 'young' && isset($youngLearners[$youngI])) {
+                $group[] = $youngLearners[$youngI];
+                $toPick = 'old';
+                $youngI++;
+            } else {
+                // If there are more old than young, we check that the learner exists and add him to the group
+                if (isset($oldLearners[$oldI])) {
+                    $group[] = $oldLearners[$oldI];
+                    $toPick = 'old';
+                    $oldI++;
+                } elseif (isset($youngLearners[$youngI])) {
+                    // Otherwise, if it was the old's turn and there were none left, add another young
+                    $group[] = $youngLearners[$youngI];
+                    $toPick = 'old';
+                    $youngI++;
+                }
+            }
+        }
+
+        $groups[] = $group;
+
+    }
+    return $groups;
+
 }
 
 ?>

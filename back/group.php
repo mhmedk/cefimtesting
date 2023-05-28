@@ -33,7 +33,7 @@ function createGroups($apprenants, $groupSize, $genderFilter, $ageFilter, $skill
     } elseif ($genderFilter) {
         return genderFilter($apprenants, $groupSize);
     } elseif ($ageFilter) {
-        return groupsAge($apprenants, $groupSize);
+        return ageFilter($apprenants, $groupSize);
     } elseif ($skillsFilter) {
         return skillsFilter($apprenants, $groupSize);
     } else {
