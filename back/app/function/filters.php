@@ -1,25 +1,29 @@
 <?php
 /**
- * Fonction pour créer des groupes sans options de filtrages.
+ * Function to create groups without filtering options
  *
- * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
- * @param int $groupSize Le nombre d'apprenants par groupe.
- * @return array Les groupes formés avec les apprenants.
+ * @param array $apprenants Learner data in the form of an associative table
+ * @param int $groupSize Number of learners per group
+ * @return array Groups formed with learners
  */
 function groupsNoFilter($apprenants, $groupSize,){
-    // Calculer le nombre de groupes nécessaires
+
+    // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
 
+    // Create final array
     $groups = array();
 
-    // Générer les groupes
+    // Generate groups
     for ($i = 0; $i < $numGroups; $i++) {
+
+        // Pour chaque groupe, extraire du tableau d'apprenants, le nombre d'apprenants souhaité
         $groups[] = array_slice($apprenants, $i * $groupSize, $groupSize);
-    }
 
-    return $groups;    
+    };
+
+    return $groups;
 }
-
 
 /**
  * Fonction pour créer des groupes mixtes en répartissant les apprenants par genre.

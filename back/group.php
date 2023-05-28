@@ -16,59 +16,52 @@ $apprenants = selectLearner($bdd);
  * @param boolean $ageFilter Find out if the filter is active
  * @return array Groups formed with learners divided into
  */
-function createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter) {
+function createGroups($apprenants, $groupSize, $genderFilter, $ageFilter, $skillsFilter) {
 
-    // Mélanger les apprenants aléatoirement
+    // Mix learners randomly
     shuffle($apprenants);
-    $groupSize = intval($groupSize);
 
-    if($genderFilter || $ageFilter || $skillsFilter){
-        if($genderFilter){
-            return genderFilter($apprenants, $groupSize);
-        }
-        if($skillsFilter){
-            return skillsFilter($apprenants, $groupSize);
-        }
-        if($ageFilter){
-            return groupsAge($apprenants, $groupSize);
-        }
-
-        if($genderFilter && $ageFilter){
-        }
-        if($genderFilter && $skillsFilter){
-            //return genderAndSkillsFilter($apprenants, $groupSize);
-        }
-        
-       
-        if($ageFilter && $skillsFilter){
-        }
-        if($genderFilter && $ageFilter && $skillsFilter){
-        }
-
-    }else{
+    // Check if a filter has been applied
+    if ($genderFilter && $ageFilter && $skillsFilter) {
+        // return ...
+    } elseif ($genderFilter && $ageFilter) {
+        // return ...
+    } elseif ($genderFilter && $skillsFilter) {
+        // return ...
+    } elseif ($ageFilter && $skillsFilter) {
+        // return ...
+    } elseif ($genderFilter) {
+        return genderFilter($apprenants, $groupSize);
+    } elseif ($ageFilter) {
+        return groupsAge($apprenants, $groupSize);
+    } elseif ($skillsFilter) {
+        return skillsFilter($apprenants, $groupSize);
+    } else {
         return groupsNoFilter($apprenants, $groupSize);
-    }
-}
+    };
 
+};
 
-// Récupérer le nombre maximum d'apprenants par groupe depuis les paramètres de la requête
+// Retrieve the desired number of learners per group
 $maxApprenantsPerGroup = isset($_GET['maxApprenantsPerGroup']) ? intval($_GET['maxApprenantsPerGroup']) : 0;
-$genderFilter = isset($_GET['genderFilter']) ? filter_var($_GET['genderFilter'], FILTER_VALIDATE_BOOLEAN) : false;
-$skillsFilter = isset($_GET['skillsFilter']) ? filter_var($_GET['skillsFilter'], FILTER_VALIDATE_BOOLEAN) : false;
-$ageFilter = isset($_GET['ageFilter']) ? filter_var($_GET['ageFilter'], FILTER_VALIDATE_BOOLEAN) : false;
 
-// Vérifier la validité du nombre maximum d'apprenants par groupe
+// Retrieve filter checkbox values
+$genderFilter = isset($_GET['genderFilter']) ? filter_var($_GET['genderFilter'], FILTER_VALIDATE_BOOLEAN) : false;
+$ageFilter = isset($_GET['ageFilter']) ? filter_var($_GET['ageFilter'], FILTER_VALIDATE_BOOLEAN) : false;
+$skillsFilter = isset($_GET['skillsFilter']) ? filter_var($_GET['skillsFilter'], FILTER_VALIDATE_BOOLEAN) : false;
+
+// Check that the number of learners is not negative, or 0
 if ($maxApprenantsPerGroup <= 0) {
     die('Le nombre maximum d\'apprenants par groupe doit être un nombre entier positif.');
-}
+};
 
-// Calculer le groupSize en fonction du nombre maximum d'apprenants par groupe et le nombre total d'apprenants
+// Ensure that the desired number of learners per group does not exceed the total number of learners in the database
 $groupSize = min($maxApprenantsPerGroup, count($apprenants));
 
-// Créer les groupes
-$groups = createGroups($apprenants, $groupSize, $genderFilter, $skillsFilter, $ageFilter);
+// Create groups
+$groups = createGroups($apprenants, $groupSize, $genderFilter, $ageFilter, $skillsFilter);
 
-// Renvoyer les groupes sous forme de données JSON
+// Return groups as JSON data
 header('Content-Type: application/json');
 echo json_encode($groups);
 ?>
