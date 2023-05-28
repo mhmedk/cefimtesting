@@ -2,11 +2,11 @@
 /**
  * Function to create groups without filtering options
  *
- * @param array $apprenants Learner data in the form of an associative table
+ * @param array $apprenants Learners data in the form of an associative table
  * @param int $groupSize Number of learners per group
  * @return array Groups formed with learners
  */
-function groupsNoFilter($apprenants, $groupSize,){
+function groupsNoFilter($apprenants, $groupSize){
 
     // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
@@ -26,47 +26,75 @@ function groupsNoFilter($apprenants, $groupSize,){
 }
 
 /**
- * Fonction pour créer des groupes mixtes en répartissant les apprenants par genre.
+ * Function for creating mixed groups of learners by gender
  *
- * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
- * @param int $groupSize Le nombre d'apprenants par groupe.
- * @return array Les groupes mixtes formés avec les apprenants répartis par genre.
+ * @param array $apprenants Learners data in the form of an associative table
+ * @param int $groupSize Number of learners per group
+ * @return array Groups formed with learners by gender
  */
 function genderFilter($apprenants, $groupSize) {
-    // Trier les apprenants par genre
-    $manApprenants = array_filter($apprenants, function($apprenant) {
-        return $apprenant['gender'] === 'man';
-    });
-    $womanApprenants = array_filter($apprenants, function($apprenant) {
-        return $apprenant['gender'] === 'woman';
-    });
 
-    // Créer les groupes mixtes
-    $mixedGroup = [];
+    // Separate learners by gender into 2 array
+    $maleLearners = array();
+    $femaleLearners = array();
+
+    foreach ($apprenants as $apprenant) {
+        if ($apprenant['gender'] === 'man') {
+            $maleLearners[] = $apprenant;
+        } else {
+            $femaleLearners[] = $apprenant;
+        }
+    }
+
+    // Create final array empty
+    $groups = array();
+
+    // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
 
-    for ($i = 0; $i < $numGroups; $i++) {
-        $group = [];
+    // Alternates between the 2 groups
+    if (count($maleLearners) > count($femaleLearners)) {
+        $toPick = 'man';
+    } else {
+        $toPick = 'woman';
+    };
 
-        // Ajouter des apprenants de genre masculin dans le groupe
-        $manCount = min(ceil($groupSize / 2), count($manApprenants));
-        $group = array_merge($group, array_splice($manApprenants, 0, $manCount));
+    // Index for each group
+    $manI = 0;
+    $womanI = 0;
 
-        // Ajouter des apprenants de genre féminin dans le groupe
-        $womanCount = min($groupSize - count($group), count($womanApprenants));
-        $group = array_merge($group, array_splice($womanApprenants, 0, $womanCount));
+    for ($i=0; $i < $numGroups; $i++) {
 
-        // Ajouter le groupe à la liste des groupes
-        $mixedGroup[] = $group;
+        $group = array();
+
+        for ($j=0; $j < $groupSize; $j++) {
+
+            // If there are more men than women, we start with the group of men and add him to the group
+            if ($toPick === 'man') {
+                $group[] = $maleLearners[$manI];
+                $toPick = 'woman';
+                $manI++;
+            } else {
+                // If there are more women than men, we check that the learner exists and add her to the group
+                if (isset($femaleLearners[$womanI])) {
+                    $group[] = $femaleLearners[$womanI];
+                    $toPick = 'man';
+                    $womanI++;
+                } elseif (isset($maleLearners[$manI])) {
+                    // Otherwise, if it was the women's turn and there were none left, add another man
+                    $group[] = $maleLearners[$manI];
+                    $toPick = 'woman';
+                    $manI++;
+                }
+            }
+
+        }
+
+        $groups[] = $group;
+
     }
 
-    // Ajouter les apprenants restants à un dernier groupe
-    $remainingGroup = array_merge($manApprenants, $womanApprenants);
-    if (!empty($remainingGroup)) {
-        $mixedGroup[] = $remainingGroup;
-    }
-
-    return $mixedGroup;
+    return $groups;
 }
 
 /**

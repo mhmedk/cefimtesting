@@ -33,8 +33,8 @@ function getApprenants(event) {
 
     // Make a fetch request to obtain the learners list
     fetch('../back/group.php?maxApprenantsPerGroup=' + maxApprenantsPerGroup
-        + '&genderfilter=' + genderFilter.toString()
-        + '&agefilter=' + ageFilter.toString()
+        + '&genderFilter=' + genderFilter.toString()
+        + '&ageFilter=' + ageFilter.toString()
         + '&skillsFilter=' + skillsFilter.toString())
             .then((response) => {
                 if (response.ok) {
