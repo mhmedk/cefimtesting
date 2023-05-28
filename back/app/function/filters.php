@@ -52,7 +52,7 @@ function genderFilter($apprenants, $groupSize) {
     // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
 
-    // Alternates between the 2 groups
+    // Pick the biggest group to start with
     if (count($maleLearners) > count($femaleLearners)) {
         $toPick = 'man';
     } else {
@@ -60,8 +60,8 @@ function genderFilter($apprenants, $groupSize) {
     };
 
     // Index for each group
-    $manI = 0;
-    $womanI = 0;
+    $backI = 0;
+    $frontI = 0;
 
     for ($i=0; $i < $numGroups; $i++) {
 
@@ -69,83 +69,107 @@ function genderFilter($apprenants, $groupSize) {
 
         for ($j=0; $j < $groupSize; $j++) {
 
-            // If there are more men than women, we start with the group of men and add him to the group
-            if ($toPick === 'man') {
-                $group[] = $maleLearners[$manI];
+            // If there are more men than women, we start with the group of men and add one to the group
+            if ($toPick === 'man' && isset($maleLearners[$backI])) {
+                $group[] = $maleLearners[$backI];
                 $toPick = 'woman';
-                $manI++;
+                $backI++;
             } else {
                 // If there are more women than men, we check that the learner exists and add her to the group
-                if (isset($femaleLearners[$womanI])) {
-                    $group[] = $femaleLearners[$womanI];
+                if (isset($femaleLearners[$frontI])) {
+                    $group[] = $femaleLearners[$frontI];
                     $toPick = 'man';
-                    $womanI++;
-                } elseif (isset($maleLearners[$manI])) {
+                    $frontI++;
+                } elseif (isset($maleLearners[$backI])) {
                     // Otherwise, if it was the women's turn and there were none left, add another man
-                    $group[] = $maleLearners[$manI];
+                    $group[] = $maleLearners[$backI];
                     $toPick = 'woman';
-                    $manI++;
+                    $backI++;
                 }
             }
-
         }
 
         $groups[] = $group;
 
     }
-
     return $groups;
 }
 
 /**
- * Fonction pour créer des groupes mixtes en répartissant les apprenants par compétences.
+ * Function to create mixed groups of learners according to their skills
  *
- * @param array $apprenants Les données des apprenants sous forme de tableau associatif.
- * @param int $groupSize Le nombre d'apprenants par groupe.
- * @return array Les groupes mixtes formés avec les apprenants répartis par compétences.
+ * @param array $apprenants Learners data in the form of an associative table
+ * @param int $groupSize Number of learners per group
+ * @return array Groups formed with learners by skills
  */
 function skillsFilter ($apprenants, $groupSize) {
-    // Trier les apprenants par compétences
-    $apprenantsBack = array_filter($apprenants, function($apprenant) {
-        return $apprenant['skills'] === 'PHP' || $apprenant['skills'] === 'JAVA';
-    });
-    $apprenantsFront = array_filter($apprenants, function($apprenant) {
-        return $apprenant['skills'] === 'HTML' || $apprenant['skills'] === 'CSS';
-    });
 
-    // Créer les groupes mixtes
-    $mixedGroup = [];
+    // Separate learners by skills into 2 array
+    $backLearners = array();
+    $frontLearners = array();
+
+    foreach ($apprenants as $apprenant) {
+        if ($apprenant['skills'] === 'PHP' || $apprenant['skills'] === 'JAVA') {
+            $backLearners[] = $apprenant;
+        } else {
+            $frontLearners[] = $apprenant;
+        }
+    }
+
+    // Create final array empty
+    $groups = array();
+
+    // Calculate the number of groups required
     $numGroups = ceil(count($apprenants) / $groupSize);
 
-    for ($i = 0; $i < $numGroups; $i++) {
-        $group = [];
+    // Pick the biggest group to start with
+    if (count($backLearners) > count($frontLearners)) {
+        $toPick = 'back';
+    } else {
+        $toPick = 'front';
+    };
 
-        // Ajouter des apprenants back dans le groupe
-        $backCount = min(ceil($groupSize / 2), count($apprenantsBack));
-        $group = array_merge($group, array_splice($apprenantsBack, 0, $backCount));
+    // Index for each group
+    $backI = 0;
+    $frontI = 0;
 
-        // Ajouter des apprenants front dans le groupe
-        $frontCount = min($groupSize - count($group), count($apprenantsFront));
-        $group = array_merge($group, array_splice($apprenantsFront, 0, $frontCount));
+    for ($i=0; $i < $numGroups; $i++) {
 
-        // Ajouter le groupe à la liste des groupes
-        $mixedGroup[] = $group;
+        $group = array();
+
+        for ($j=0; $j < $groupSize; $j++) {
+
+            // If there are more back than front, we start with the group of back and add one to the group
+            if ($toPick === 'back' && isset($backLearners[$backI])) {
+                $group[] = $backLearners[$backI];
+                $toPick = 'front';
+                $backI++;
+            } else {
+                // If there are more front than back, we check that the learner exists and add him to the group
+                if (isset($frontLearners[$frontI])) {
+                    $group[] = $frontLearners[$frontI];
+                    $toPick = 'back';
+                    $frontI++;
+                } elseif (isset($backLearners[$backI])) {
+                    // Otherwise, if it was the front's turn and there were none left, add another man
+                    $group[] = $backLearners[$backI];
+                    $toPick = 'front';
+                    $backI++;
+                }
+            }
+        }
+
+        $groups[] = $group;
+
     }
-
-    // Ajouter les apprenants restants à un dernier groupe
-    $remainingGroup = array_merge($apprenantsBack, $apprenantsFront);
-    if (!empty($remainingGroup)) {
-        $mixedGroup[] = $remainingGroup;
-    }
-
-    return $mixedGroup;
+    return $groups;
 }
 
 /**
  * Fonction pour créer des groupes mixtes en répartissant les apprenants par ages.
  *
- * @param array $apprenantsAge Les données des apprenants sous forme de tableau associatif trier ages.
- * @param int $groupSize Le nombre d'apprenants par groupe.
+ * @param array $apprenants Learners data in the form of an associative table
+ * @param int $groupSize Number of learners per group
  * @return array Les groupes mixtes formés avec les apprenants répartis par ages.
  */
 function groupsAge($apprenantsAge, $groupSize) {
@@ -156,7 +180,7 @@ function groupsAge($apprenantsAge, $groupSize) {
     //tableau vide
     $groupsAge = array();
 
-    //tableau de jeune en découpant la liste $apprenantsAge et qui retourne 
+    //tableau de jeune en découpant la liste $apprenantsAge et qui retourne
     $young = array_filter($apprenantsAge, function($apprenant) {
         return $apprenant['age'] < 30;
     });
